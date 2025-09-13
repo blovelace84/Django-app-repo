@@ -1,11 +1,8 @@
 
 from django.contrib import admin
-from django.http import HttpResponse
-from django.urls import path
+from django.urls import path, include
 
-def hello(request):
-    return HttpResponse("<h1>Hello</h1> <p>World</p>")
 urlpatterns = [
-    path('admin-site/', admin.site.urls),
-    path('hello', hello)
+    path('admin/', admin.site.urls),
+    path('', include('visits.urls'))
 ]
